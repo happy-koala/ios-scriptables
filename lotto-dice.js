@@ -1,9 +1,6 @@
-// v1
+// v2
 
 const w = new ListWidget()
-
-w.borderWidth = 50
-w.borderColor = new Color('#ffffff')
 
 let numbers = Array.from({length:49}, (v,i) => i+1)
 let randomNumbers= []
@@ -27,32 +24,21 @@ showRandomNumbers()
 
 w.addSpacer()
 
-let a = w.addStack()
-a.addSpacer()
-a.addText(randomNumbers[0].toString())
-a.addSpacer()
-a.addText(randomNumbers[1].toString())
-a.addSpacer()
+let n = 0
 
-w.addSpacer()
+for (var i = 0; i < 3; i++) {
+  let a = w.addStack()
+  a.addSpacer()
+  a.addText(randomNumbers[n].toString())
+  n++
+  a.addSpacer()
+  a.addText(randomNumbers[n].toString())
+  n++
+  a.addSpacer()
+  w.addSpacer()
+}
 
-let b = w.addStack()
-b.addSpacer()
-b.addText(randomNumbers[2].toString())
-b.addSpacer()
-b.addText(randomNumbers[3].toString())
-b.addSpacer()
 
-w.addSpacer()
-
-let c = w.addStack()
-c.addSpacer()
-c.addText(randomNumbers[4].toString())
-c.addSpacer()
-c.addText(randomNumbers[5].toString())
-c.addSpacer()
-
-w.addSpacer()
 
 Script.setWidget(w)
 Script.complete()
