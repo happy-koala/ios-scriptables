@@ -1,4 +1,4 @@
-// v2
+// v3
 
 const w = new ListWidget()
 
@@ -29,12 +29,11 @@ let n = 0
 for (var i = 0; i < 3; i++) {
   let a = w.addStack()
   a.addSpacer()
-  a.addText(randomNumbers[n].toString())
-  n++
-  a.addSpacer()
-  a.addText(randomNumbers[n].toString())
-  n++
-  a.addSpacer()
+  	for (var x = 0; x < 2; x++) {
+  		a.addText(randomNumbers[n].toString())
+  		n++
+  		a.addSpacer()
+	}
   w.addSpacer()
 }
 
